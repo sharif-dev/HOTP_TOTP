@@ -35,7 +35,7 @@ It is a one-time password (OTP) algorithm based on hash-based message authentica
 
   So, TOTP uses time in increments called the timestep, which is usually 30 or 60 seconds. This means that each OTP is valid for the duration of the timestep.
 
-  In this link your code will change each 5 seconds, you can try it.
+  In this [link](https://asecuritysite.com/encryption/totp) your code will change each 5 seconds, you can try it.
 
   TOTP uses the HOTP algorithm, substituting the counter with a non-decreasing value based on the current time.
   
@@ -43,5 +43,4 @@ It is a one-time password (OTP) algorithm based on hash-based message authentica
      T = an interval which will be used to calculate the value of the counter CT (default is 30 seconds) 
      counter = currentUnixTime / T
      TOTP value(K) = HOTP value(K, counter)
-
 ```
