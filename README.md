@@ -38,3 +38,10 @@ It is a one-time password (OTP) algorithm based on hash-based message authentica
   In this link your code will change each 5 seconds, you can try it.
 
   TOTP uses the HOTP algorithm, substituting the counter with a non-decreasing value based on the current time.
+  
+  ```
+     T = an interval which will be used to calculate the value of the counter CT (default is 30 seconds) 
+     counter = currentUnixTime / T
+     TOTP value(K) = HOTP value(K, counter)
+
+```
