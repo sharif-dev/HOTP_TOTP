@@ -29,7 +29,9 @@ It is a one-time password (OTP) algorithm based on hash-based message authentica
   The solution is found in the TOTP.
   
   ## TOTP: Time-Based One-Time Password Algorithm
-  A TOTP uses the HOTP algorithm to obtain the one time password. The only difference is that it uses “Time” in the place of “counter,” and that gives the solution to our problem.That means that instead of initializing the counter and keeping track of it, we can use time as a counter in the HOTP algorithm to obtain the OTP. As a server and phone both have access to time, neither of them has to keep track of the counter. To avoid the problem of different time zones of the server and phone, we can use a Unix timestamp, which is independent of time zones.
+  A TOTP uses the HOTP algorithm to obtain the one time password. The only difference is that it uses “Time” in the place of “counter,” and that gives the solution to our problem.
+  
+  That means that instead of initializing the counter and keeping track of it, we can use time as a counter in the HOTP algorithm to obtain the OTP. As a server and phone both have access to time, neither of them has to keep track of the counter. To avoid the problem of different time zones of the server and phone, we can use a Unix timestamp, which is independent of time zones.
 
   So, TOTP uses time in increments called the timestep, which is usually 30 or 60 seconds. This means that each OTP is valid for the duration of the timestep.
 
