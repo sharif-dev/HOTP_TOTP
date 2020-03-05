@@ -14,3 +14,17 @@ It is a one-time password (OTP) algorithm based on hash-based message authentica
   Hash-based message authentication codes (or HMACs) are a tool for calculating message authentication codes using a cryptographic hash function coupled with a secret key. You can use an HMAC to verify both the integrity and authenticity of a message.
   
   Thease links( [link](https://cryptography.io/en/latest/hazmat/primitives/mac/hmac/),[link](https://asecuritysite.com/encryption/hotp)) will help.
+  
+  This algorithm was published as RFC4226 by the Internet Engineering Task Force (IETF).it relies on two pieces of information. The first is the secret key, called the "seed", which is known only by the token and the server that validates submitted OTP codes. The second piece of information is the moving factor which, in event-based OTP, is a counter. The counter is stored in the token and on the server. The counter in the token increments when the button on the token is pressed, while the counter on the server is incremented only when an OTP is successfully validated.
+  
+  To calculate an OTP the token feeds the counter into the HMAC algorithm using the token seed as the key. HOTP uses the SHA-1 hash function in the HMAC. This produces a 160-bit value which is then reduced down to the 6 (or 8) decimal digits displayed by the token.
+  
+  '''
+     hmacHash = HMAC-SHA-1(secretKey, counter);
+     
+     
+     truncatedHash = (hmacHash[offset++] & 0x7f) << 24 | (hmacHash[offset++] & 0xff) << 16 | (hmacHash[offset++] & 0xff) << 8 |      (hmacHashh[offset++] & 0xff);
+     
+     
+     finalOTP = (truncatedHash % (10 ^ numberOfDigitsRequiredInOTP));
+  '''
