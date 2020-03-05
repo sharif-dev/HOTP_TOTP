@@ -19,12 +19,10 @@ It is a one-time password (OTP) algorithm based on hash-based message authentica
   
   To calculate an OTP the token feeds the counter into the HMAC algorithm using the token seed as the key. HOTP uses the SHA-1 hash function in the HMAC. This produces a 160-bit value which is then reduced down to the 6 (or 8) decimal digits displayed by the token.
   
-  '''
+  ```
      hmacHash = HMAC-SHA-1(secretKey, counter);
-     
-     
      truncatedHash = (hmacHash[offset++] & 0x7f) << 24 | (hmacHash[offset++] & 0xff) << 16 | (hmacHash[offset++] & 0xff) << 8 |      (hmacHashh[offset++] & 0xff);
      
      
      finalOTP = (truncatedHash % (10 ^ numberOfDigitsRequiredInOTP));
-  '''
+  ```
