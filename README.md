@@ -44,3 +44,24 @@ This algorithm was published as RFC4226 by the Internet Engineering Task Force (
      counter = currentUnixTime / T
      TOTP value(K) = HOTP value(K, counter)
 ```
+## TOP in android
+ I used [2factpr](https://2factor.in/v3/?at_category=2factor&at_event_action=spr&service=BULK-SMS-OTP-SERVICE-PROVIDER) as my bulk sms service provider
+ ### steps:
+ - Go Gradle Scripts -> gradle.build(Module:app) -> dependencies and add 
+ ```
+compile 'com.google.code.gson:gson:2.6.2'
+compile 'com.squareup.retrofit2:retrofit:2.0.2'
+compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+```
+  and sync your project like this [link](https://github.com/sharif-dev/custom_buttons/blob/master/app/build.gradle)
+- Go to AndroidManifest.xml file and add this code for internet permission
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+
+```
+ like this [link](https://github.com/sharif-dev/custom_buttons/blob/master/app/src/main/AndroidManifest.xml)
+- make a class to take care of the response from API call like this [link](https://github.com/sharif-dev/custom_buttons/blob/master/app/src/main/java/edu/sharif/yousefi/first_app/MessageResponse.java)
+- Now make an api client and set base url like this [link](https://github.com/sharif-dev/custom_buttons/blob/master/app/src/main/java/edu/sharif/yousefi/first_app/ApiClient.java)
+- We should define an endpoint of the API in an interface like this [link](https://github.com/sharif-dev/custom_buttons/blob/master/app/src/main/java/edu/sharif/yousefi/first_app/ApiInterface.java)
+- Request and verify otp like these two methods in this [link](https://github.com/sharif-dev/custom_buttons/blob/master/app/src/main/java/edu/sharif/yousefi/first_app/LoginActivity.java)
+
