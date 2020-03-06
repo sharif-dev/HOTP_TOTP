@@ -44,7 +44,7 @@ This algorithm was published as RFC4226 by the Internet Engineering Task Force (
      counter = currentUnixTime / T
      TOTP value(K) = HOTP value(K, counter)
 ```
-## Use OTP in android
+## Use OTP in android project
  I used [2factor](https://2factor.in/v3/?at_category=2factor&at_event_action=spr&service=BULK-SMS-OTP-SERVICE-PROVIDER) as my bulk sms service provider(and use my api key)
  ### steps:
  - Go Gradle Scripts -> gradle.build(Module:app) -> dependencies and add 
