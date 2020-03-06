@@ -45,7 +45,7 @@ This algorithm was published as RFC4226 by the Internet Engineering Task Force (
      TOTP value(K) = HOTP value(K, counter)
 ```
 ## TOP in android
- I used [2factpr](https://2factor.in/v3/?at_category=2factor&at_event_action=spr&service=BULK-SMS-OTP-SERVICE-PROVIDER) as my bulk sms service provider
+ I used [2factor](https://2factor.in/v3/?at_category=2factor&at_event_action=spr&service=BULK-SMS-OTP-SERVICE-PROVIDER) as my bulk sms service provider(and use my api key)
  ### steps:
  - Go Gradle Scripts -> gradle.build(Module:app) -> dependencies and add 
  ```
